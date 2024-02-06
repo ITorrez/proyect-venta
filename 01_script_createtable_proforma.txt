@@ -1,0 +1,21 @@
+CREATE TABLE tb_proforma
+(
+    id_proforma   int PRIMARY KEY AUTO_INCREMENT,
+    cliente_proforma   varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci,
+    fecha_proceso      date,
+    fecha_alta         datetime,
+    usuario_alta       int,
+    tipo_usuario       varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci,
+    usuario_baja       int,
+    total_costo        decimal(18,2),
+    estado             char(1)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE tb_item_proforma
+(
+    id_item_proforma  int PRIMARY KEY AUTO_INCREMENT,
+    id_proforma       int,
+    cantidad          int,
+    producto          varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci,
+    costo_unitario    decimal(18,2),
+    subtotal          decimal(18,2)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
